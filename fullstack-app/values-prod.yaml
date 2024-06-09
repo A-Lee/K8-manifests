@@ -1,0 +1,24 @@
+ingressName: fullstack-ingress
+hostName: prod.ali93frontend.com
+frontendServiceName: frontend-service
+backendServiceName: backend-service
+backendImageName: ali93/backend
+backendImageTag: "4.1"
+frontendImageName: ali93/frontend
+frontendImageTag: "4.1"
+dbImage: mysql
+namespace: fullstack-prod
+pv:
+  name: data-pv-prod
+deploymentEnv: "Helm deployment - Production Environment"
+configMap:
+  name: fullstack-config
+  backendUrl: "http://backend-service:8080/api/person"
+  username: root
+  sql_url: jdbc:mysql://$(SQL_SERVICE_SERVICE_HOST):3306/peopledb?createDatabaseIfNotExist=true
+  fakeVal: TESTFFS
+specYaml:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mysql
