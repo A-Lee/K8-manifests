@@ -18,7 +18,7 @@ configMap:
   sql_url: jdbc:mysql://$(SQL_SERVICE_SERVICE_HOST):3306/peopledb?createDatabaseIfNotExist=true
   fakeVal: TESTFFS
 specYaml:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: mysql
