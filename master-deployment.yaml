@@ -110,7 +110,7 @@ spec:
         - name: backend_url
           valueFrom:
             configMapKeyRef:
-              name: frontend-config
+              name: fullstack-config
               key: backend_url
 ---
 apiVersion: apps/v1
