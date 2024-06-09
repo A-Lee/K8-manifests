@@ -1,6 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: frontend-config
+  name: fullstack-config
 data:
   backend_url: "http://backend-service:8080/api/person"
+  username: root
+  sql_url: jdbc:mysql://$(SQL_SERVICE_SERVICE_HOST):3306/peopledb?createDatabaseIfNotExist=true
+  fakeVal: TESTFFS
