@@ -1,5 +1,5 @@
 ingressName: fullstack-ingress
-hostName: ali93frontend.com
+hostName: prod.ali93frontend.com
 frontendServiceName: frontend-service
 backendServiceName: backend-service
 backendImageName: ali93/backend
@@ -7,8 +7,10 @@ backendImageTag: "4.1"
 frontendImageName: ali93/frontend
 frontendImageTag: "4.1"
 dbImage: mysql
-namespace: default
-deploymentEnv: "Helm deployment - Default environment"
+namespace: fullstack-prod
+pv:
+  name: data-pv-prod
+deploymentEnv: "Helm deployment - Production Environment"
 configMap:
   name: fullstack-config
   backendUrl: "http://backend-service:8080/api/person"
